@@ -1,0 +1,45 @@
+<style>
+  :host {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+    <!-- Input para trabajar con ngModel 
+      El ngModel cambia el modelo que se está representando, es una relación bidireccional (double binding) 
+      Los {} dan información y los () son eventos/escuchas de información, [(ngModel)] es atributo y evento al mismo tiempo-->
+
+    <!-- <input type="text" placeholder="User name" [(ngModel)]="userName" /> -->
+    <!-- <app-saludo
+        [name]="userName"
+        (messageEmitter)="getChildMessage($event)"
+      ></app-saludo> -->
+    <!-- <app-saludo (messageEmitter)="getChildMessage($event)"></app-saludo> -->
+
+    <!-- EJEMPLO DE USO DE SERVICIO -->
+    <!-- <app-contacts-list></app-contacts-list> -->
+
+    <!-- Ejemplo de petición HTTP -->
+    <!-- <app-login-form></app-login-form> -->
+
+    <button *ngIf="token" (click)="logout()">Log Out</button>
+    <!-- Router Outlet renderiza el componente que indique el Routing Module a partir de la ruta URL activa -->
+    <router-outlet />
+  </div>
+</main>
