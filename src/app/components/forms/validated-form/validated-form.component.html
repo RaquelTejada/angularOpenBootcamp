@@ -1,1 +1,13 @@
-<p>validated-form works!</p>
+<form [formGroup]="myValidatedForm" (submit)="sendForm()">
+  <h3>Datos en vivo del formulario:</h3>
+  <p>{{ myValidatedForm.value | json }}</p>
+  <!-- Campos del formulario + Mensajes de error por validación -->
+  <input placeholder="Nombre" formControlName="name" />
+  <div *ngIf="name?.errors?.['required'] && name?.touched">
+    <p [ngStyle]="{ color: 'tomato' }">El campo Nombre es obligatorio</p>
+  </div>
+  <div>
+    <!-- Botón de Submit que se activa sólo cuando el formulario es válido -->
+    <button type="submit" [disabled]="myValidatedForm.invalid">Enviar</button>
+  </div>
+</form>
