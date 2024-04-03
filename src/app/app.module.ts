@@ -4,7 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './components/saludo/saludo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//Módulos Angular Material
+
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 // Módulo personalizado que exporta componentes de tipo lista:
 import { ListsModule } from './modules/lists/lists.module';
@@ -17,6 +21,10 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { ContactsDetailsPageComponent } from './pages/contacts-details-page/contacts-details-page.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FormComponent } from './components/forms/form/form.component';
+import { NestFormComponent } from './components/forms/nest-form/nest-form.component';
+import { ArrayFormComponent } from './components/forms/array-form/array-form.component';
+import { ValidatedFormComponent } from './components/forms/validated-form/validated-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +37,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     NotFoundPageComponent,
     ContactsPageComponent,
     ContactsDetailsPageComponent,
+    FormComponent,
+    NestFormComponent,
+    ArrayFormComponent,
+    ValidatedFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,10 +50,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ListsModule,
     // Importamos el módulo HttpClientModule para hacer peticiones HTTP.
     HttpClientModule,
+    // Importamos Reactive Forms Module para trabajar con formularios reactivos.
+    ReactiveFormsModule,
+    // Importamos los módulos de Angular Material que usamos en los formularios
+    MatFormFieldModule,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

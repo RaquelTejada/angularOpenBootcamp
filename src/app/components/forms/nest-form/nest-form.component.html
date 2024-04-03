@@ -1,0 +1,16 @@
+<form [formGroup]="myNestForm">
+  <h3>Datos en vivo del Formulario</h3>
+  <p>{{ myNestForm.value | json }}</p>
+
+  <h4>Teléfono fijo</h4>
+  <div formGroupName="phone">
+    <input placeholder="Prefijo" formControlName="countryCode" />
+    <input placeholder="Número" formControlName="phone" />
+  </div>
+
+  <h4>Teléfono móvil</h4>
+  <div formGroupName="mobile">
+    <input placeholder="Prefijo" formControlName="countryCode" />
+    <input placeholder="Número" formControlName="phone" />
+  </div>
+</form>
